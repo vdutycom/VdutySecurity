@@ -1,0 +1,5 @@
+VdutySecurity\VsUserService.class
+VdutySecurity\VsUserDetails.class
+VdutySecurity\VsAuthorities.class
+VdutySecurity\VsUserUtils.class
+VdutySecurity\VsInterceptor.class
