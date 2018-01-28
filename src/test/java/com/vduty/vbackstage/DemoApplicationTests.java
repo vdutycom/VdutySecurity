@@ -10,9 +10,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.vduty.vbackstage.redis.utils.RedisUtils;
 import com.vduty.vbackstage.user.entity.UsersEntity;
 import com.vduty.vbackstage.utils.RandomUtils;
-import com.vduty.vbackstate.redis.utils.RedisUtils;
 
 
 @RunWith(SpringRunner.class)

@@ -35,10 +35,10 @@ import com.vduty.vbackstage.admin.mapper.AdminMapper;
 import com.vduty.vbackstage.configs.Constants;
 import com.vduty.vbackstage.entity.UsersBaseEntity;
 import com.vduty.vbackstage.mapper.UserBaseMapper;
+import com.vduty.vbackstage.redis.utils.RedisObjectSerializer;
 import com.vduty.vbackstage.user.entity.UsersEntity;
 import com.vduty.vbackstage.user.mapper.UserMapper;
 import com.vduty.vbackstage.utils.RegexUtil;
-import com.vduty.vbackstate.RedisObjectSerializer;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -13,9 +13,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import com.vduty.vbackstage.redis.utils.RedisObjectSerializer;
 import com.vduty.vbackstage.security.MyFilterSecurityInterceptor;
 import com.vduty.vbackstage.service.CustomUserService;
-import com.vduty.vbackstate.RedisObjectSerializer;
 
 @Configuration //相当于xml配置beans
 @EnableWebSecurity
