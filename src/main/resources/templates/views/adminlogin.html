@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta content="text/html;charset=UTF-8" />
+<title>登录页面</title>
+<link rel="stylesheet"
+	href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+<style type="text/css">
+body {
+	padding-top: 50px;
+}
+
+.starter-template {
+	padding: 40px 15px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">vduty管理后台</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a th:href="@{/}"> 首页 </a></li>
+
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div class="container">
+		<div class="starter-template">
+
+			<form name="form" method="POST">
+				<!-- 3 -->
+				<div class="form-group">
+					<label for="username">账号</label> <input type="text"
+						class="form-control" id="name" name="username" value="mdnkie"
+						placeholder="账号" />
+				</div>
+				<div class="form-group">
+					<label for="password">密码</label> <input type="password"
+						class="form-control" id="password" name="password" value="1111"
+						placeholder="密码" />
+				</div>
+				<input id="login" value="Login" class="btn btn-primary" />
+			</form>
+		</div>
+
+	</div>
+
+</body>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+<script>
+	function postClick(url, data) {
+		$.ajax({
+			type : "POST",
+			url : url,
+			data : data,
+			dataType : "json",
+			 contentType:'application/json;charset=UTF-8', //contentType很重要  
+			 //contentType:'application/x-www-form-urlencoded;charset=utf-8',
+			success : function(result) {
+				console.log("succ");
+				console.log(result);
+			},
+			error : function(result) {
+				console.log("error");
+				console.log(result);
+			}
+		});
+	}
+
+	$(document).ready(function() {
+
+		$("#login").click(function() {
+			var user = {"name" : $('#name').val(),"password" : $("#password").val()};
+			user = JSON.stringify(user);
+			console.log(user);
+			var url = "/adminloginajax";
+			//logining...
+			postClick(url, user);
+			console.log("logining....");
+
+		})
+	});
+</script>
+
+
+</html>
